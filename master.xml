@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Master Suite">
+	<parameter name="browser" value="edge"></parameter> <!--Global variable -->
+	<!--Global vriable works only when relavant parameter is not available in Test tag locally -->
+
+	<listeners>
+		<listener class-name="utilities.ExtentReportManager"></listener>
+	</listeners>
+
+	<test thread-count="5" name="Test">
+		<!--Local variable = only for TC inside test Tag-->
+		<parameter name="os" value="Windows"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="testCases.LoginTests" />
+			<!-- <class name="testCases.TC02LoginWithCorrectUserAndPassword" /> -->
+			<!-- <class name="testCases.TC03LoginPositiveNegative" /> -->
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
